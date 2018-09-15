@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ITActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="43dp"
+        android:text="Hello  ITTTTT!"
+        android:textSize="24sp"
+        android:textColor="@color/zit"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.052" />
+
+
+    <Button
+        android:id="@+id/btnToTou"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:onClick="btnToTou"
+        android:text="Tourism"
+        android:textColor="@color/zit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnToHos" />
+
+    <Button
+        android:id="@+id/btnToBus"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:onClick="btnToBus"
+        android:text="Business"
+        android:textColor="@color/zit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnToMain" />
+
+    <Button
+        android:id="@+id/btnToHos"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:onClick="btnToHos"
+        android:text="Hospitality"
+        android:textColor="@color/zit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnToBus" />
+
+    <Button
+        android:id="@+id/btnToMain"
+        android:layout_width="54dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="25dp"
+        android:drawableLeft="@drawable/ic_home"
+        android:onClick="btnToMain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewIt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ais03"
+        tools:layout_editor_absoluteX="0dp" />
+
+</android.support.constraint.ConstraintLayout>
