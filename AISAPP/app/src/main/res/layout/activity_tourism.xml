@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="4dp"
         android:onClick="btnToIT"
         android:text="I T"
         android:textColor="@color/ztou"
@@ -49,7 +49,7 @@
 
     <Button
         android:id="@+id/btnToHos"
-        android:layout_width="110dp"
+        android:layout_width="115dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:onClick="btnToHos"
@@ -72,10 +72,13 @@
         android:id="@+id/imageViewTou"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="64dp"
         android:adjustViewBounds="true"
+        app:layout_constraintBottom_toTopOf="@+id/btnToHos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ais04"
-        tools:layout_editor_absoluteX="0dp" />
+        app:srcCompat="@drawable/ais04" />
 
 </android.support.constraint.ConstraintLayout>
