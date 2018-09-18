@@ -1,143 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        android:text="Simple Calculator"
-        android:textAlignment="viewEnd"
-        android:textSize="36sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Simple Calculator"
+            android:textAlignment="textStart"
+            android:textSize="36sp"
+            android:textStyle="bold|italic"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="51dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="by Shaw"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytRowNum1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="+"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn2"
-        app:layout_constraintEnd_toStartOf="@+id/btn2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:background="@color/colorBg"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/lblNum1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:labelFor="@+id/txtNum1"
+            android:text="Number1"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/txtNum1"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@color/ic_launcher_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="0"
+            android:textSize="36sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytRowNum2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="-"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn3"
-        app:layout_constraintEnd_toStartOf="@+id/btn3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn1" />
+        android:background="@color/colorBg"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/lblNum2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Number2"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="223dp" />
+
+        <EditText
+            android:id="@+id/txtNum2"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@color/ic_launcher_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:text="2"
+            android:textSize="36sp"
+            tools:layout_editor_absoluteX="227dp"
+            tools:layout_editor_absoluteY="216dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lytRowBtn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="*"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn4"
-        app:layout_constraintEnd_toStartOf="@+id/btn4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn2" />
+        android:background="@color/colorBg"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
-    <Button
-        android:id="@+id/btn4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="/"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn5"
-        app:layout_constraintEnd_toStartOf="@+id/btn5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn3" />
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shape"
+            android:onClick="btnPlus"
+            android:text="+"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="427dp" />
 
-    <Button
-        android:id="@+id/btn5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:layout_marginEnd="16dp"
-        android:text="="
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn4" />
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shape"
+            android:onClick="btnMinus"
+            android:text="-"
+            tools:layout_editor_absoluteX="92dp"
+            tools:layout_editor_absoluteY="427dp" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number1"
-        android:textSize="36sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txt1"
-        app:layout_constraintStart_toStartOf="@+id/textView2" />
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shape"
+            android:onClick="btnMultiply"
+            android:text="*"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="427dp" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number2"
-        android:textSize="36sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txt2"
-        app:layout_constraintStart_toStartOf="@+id/textView3" />
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shape"
+            android:onClick="btnDivide"
+            android:text="/"
+            tools:layout_editor_absoluteX="230dp"
+            tools:layout_editor_absoluteY="427dp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="Result"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtsum"
-        app:layout_constraintStart_toStartOf="parent" />
+    <LinearLayout
+        android:id="@+id/lytRowResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBg"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
-    <EditText
-        android:id="@+id/txt1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="8dp"
-        android:text="num1"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/txt2"
-        app:layout_constraintStart_toStartOf="@+id/txt2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        <TextView
+            android:id="@+id/lblResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="Result"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="36dp"
+            tools:layout_editor_absoluteY="304dp" />
 
-    <EditText
-        android:id="@+id/txt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="17dp"
-        android:text="num2"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtsum"
-        app:layout_constraintStart_toStartOf="@+id/txtsum" />
+        <EditText
+            android:id="@+id/txtResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="227dp"
+            tools:layout_editor_absoluteY="297dp" />
+    </LinearLayout>
 
-    <EditText
-        android:id="@+id/txtsum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
-        android:layout_marginEnd="56dp"
-        android:text="SUM"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
