@@ -4,51 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_main"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:alpha="0.9"
+        android:scaleType="center"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_kids"
+        app:srcCompat="@drawable/logo_colormaths"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:id="@+id/textView"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:padding="40dp"
-        android:text="TextView"
-        android:textSize="30sp" />
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.8"
+        android:background="@color/colorBg"
+        android:text="Click a buttons to start a test" />
 
-    <Button
-        android:id="@+id/button"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnToQ"
-        android:text="Plus" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnToQ"
-        android:text="Minus" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnToQ"
-        android:text="Multiply" />
+            <Button
+                android:id="@+id/btnPlus"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:alpha="08"
+                android:background="@color/colorBgBtn_pressed"
+                android:capitalize="characters"
+                android:onClick="btnToQ"
+                android:text="Learn Addition" />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="divide" />
+            <Button
+                android:id="@+id/btnMinus"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="btnToQ"
+                android:text="Learn Subtraction" />
+
+            <Button
+                android:id="@+id/btnDivide"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="btnToQ"
+                android:text="Learn Dvision" />
+
+            <Button
+                android:id="@+id/btnMultiply"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:onClick="btnToQ"
+                android:text="Learn Multiplication" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Setting" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="About" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
