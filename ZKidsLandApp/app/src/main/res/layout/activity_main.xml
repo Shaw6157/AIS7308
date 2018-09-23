@@ -28,8 +28,11 @@
         android:text="Click a buttons to start a test" />
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.9"
+        android:background="@color/colorBg">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,19 +75,28 @@
                 android:onClick="btnToQ"
                 android:text="Learn Multiplication" />
 
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Setting" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="About" />
+                <Button
+                    android:id="@+id/btnSetting"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:text="Setting" />
+
+                <Button
+                    android:id="@+id/btnAbout"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:onClick="goAbout"
+                    android:text="About" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

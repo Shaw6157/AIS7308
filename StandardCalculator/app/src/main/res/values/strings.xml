@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">StandardCalculator</string>
-    <string name="btn_size">90dp</string>
+    <string name="btn_width">60dp</string>
+    <string name="btn_height">60dp</string>
+    <string name="btn_radius">10dp</string>
 </resources>
