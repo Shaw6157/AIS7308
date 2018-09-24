@@ -23,9 +23,10 @@
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:alpha="0.8"
+        android:alpha="0.9"
         android:background="@color/colorBg"
-        android:text="Click a buttons to start a test" />
+        android:text="Click to start your test:"
+        android:textSize="24sp" />
 
     <ScrollView
         android:layout_width="340dp"
@@ -40,60 +41,94 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <Button
-                android:id="@+id/btnPlus"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:alpha="08"
-                android:background="@color/colorBgBtn_pressed"
-                android:capitalize="characters"
-                android:onClick="btnToQ"
-                android:text="Learn Addition" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btnMinus"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="btnToQ"
-                android:text="Learn Subtraction" />
+                <Button
+                    android:id="@+id/btnPlus"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginRight="29dp"
+                    android:layout_weight="1"
+                    android:alpha="08"
+                    android:background="@drawable/btn1"
+                    android:capitalize="characters"
+                    android:onClick="btnToQ" />
 
-            <Button
-                android:id="@+id/btnDivide"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="btnToQ"
-                android:text="Learn Dvision" />
-
-            <Button
-                android:id="@+id/btnMultiply"
-                android:layout_width="340dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:onClick="btnToQ"
-                android:text="Learn Multiplication" />
+                <Button
+                    android:id="@+id/btnMinus"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginRight="29dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn2"
+                    android:onClick="btnToQ" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnMultiply"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginRight="29dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn3"
+                    android:onClick="btnToQ" />
+
+                <Button
+                    android:id="@+id/btnDivide"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginRight="29dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn4"
+                    android:onClick="btnToQ" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btnSetting"
-                    android:layout_width="340dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_margin="45dp"
                     android:layout_weight="1"
+                    android:background="@drawable/settings"
                     android:text="Setting" />
 
                 <Button
                     android:id="@+id/btnAbout"
-                    android:layout_width="340dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
+                    android:layout_margin="45dp"
                     android:layout_weight="1"
+                    android:background="@drawable/information"
                     android:onClick="goAbout"
                     android:text="About" />
             </LinearLayout>

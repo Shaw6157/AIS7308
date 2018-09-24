@@ -110,10 +110,11 @@
         <Button
             android:id="@+id/btni"
             style="@style/Sty_NumButton"
-            android:fontFamily="serif"
-            android:text="i"
-            android:textSize="34sp"
-            android:textStyle="bold" />
+            android:fontFamily="monospace"
+            android:onClick="clickAbout"
+            android:text="About"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
         <Button style="@style/Sty_NumButton"
             android:id="@+id/btn0"
             android:text="0" />

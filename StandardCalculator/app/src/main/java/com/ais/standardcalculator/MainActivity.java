@@ -145,7 +145,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        Log.d("curt num : ", " " + gv_num + "   result: " + gv_res);
+//        Log.d("final num : ", " " + gv_num + "   result: " + gv_res);
+//        Log.d("final scr num : ", " " + str_num + "   result: " + str_his);
 
         tvhis.setText(str_his);
         tvres.setText(toInt(str_num));
@@ -154,38 +155,68 @@ public class MainActivity extends AppCompatActivity {
     private void clickNum(String p_num) {
         playClick(soundNum);
 
-        if (".".equals(p_num) && !hasDot) {
-            if (isLastOpr) {
-                str_num = "0.";
-                gv_num = 0;
-            } else {
-                str_num += p_num;
-            }
-            hasDot = true;
-            isLastOpr = false;
-            return;
+//        Log.d("ccc gvnum : ", " " + gv_num + "   gvres: " + gv_res);
+//        Log.d("cc strnum : ", " " + str_num + "   str his: " + str_his);
+
+        switch (p_num) {
+            case ".":
+                if (!hasDot) {
+                    if (isLastOpr) {
+                        str_num = "0.";
+                        gv_num = 0;
+                    } else {
+                        str_num += p_num;
+                    }
+                    hasDot = true;
+                    isLastOpr = false;
+                }
+                return;
+            case "BS":
+                if ((str_num != null) && str_num.length() == 1){
+                    str_num = "0";
+                } else {
+                    str_num = str_num.substring(0, str_num.length() - 1);
+                }
+                break;
+            case "PM":
+                if (("0.0".equals(str_num)) || ("0".equals(str_num))) {
+                    break;
+                }
+                if (str_num.startsWith("-")){
+                    str_num = str_num.substring(1, str_num.length());
+                } else {
+                    str_num = "-" + str_num;
+                }
+                break;
+            default:
+                Log.d("333 : ", " " + str_num + "   result: " + str_his);
+                if (isLastOpr) {
+                    str_num = p_num;
+                } else {
+                    str_num = ("0".equals(str_num) || "E".equals(str_num)) ? p_num : str_num + p_num;
+                }
         }
 
-        if (".".equals(p_num) && hasDot){
-            return;
-        }
-
-        if (isLastOpr) {
-            str_num = p_num;
-        } else {
-//            if ("0".equals(str_num) || "E".equals(str_num)){
-//                str_num = p_num;
-//            } else if ("0.".equals(str_num)){
-//
-            str_num = ("0".equals(str_num) || "E".equals(str_num)) ? p_num : str_num + p_num;
-        }
         gv_num = Float.parseFloat(str_num);
         isLastOpr = false;
+
     }
 
     private void clickOpr(String p_opr) {
         playClick(soundOpr);
         if ("E".equals(str_num)) {
+            return;
+        }
+
+        // press two operations
+        if (isLastOpr && (!"=".equals(p_opr)) && (!"=".equals(stropr_last))) {
+
+            String lv_strint = toInt("" + gv_num);
+            str_his = ("0.0".equals(str_num) ? "0" : str_his + lv_strint).substring(0, str_his.length() - 1) + p_opr;
+
+            stropr_last = p_opr;
+            isLastOpr = true;
+            hasDot = false;
             return;
         }
 
@@ -227,6 +258,11 @@ public class MainActivity extends AppCompatActivity {
         hasDot = false;
     }
 
+    public void clickAbout (View v) {
+        Intent intentAbout = new Intent(this, AboutActivity.class);
+        startActivity(intentAbout);
+    }
+
     private String toInt (String p_str) {
         return p_str.endsWith(".0") ? p_str.substring(0, p_str.length() - 2) : p_str;
     }
@@ -237,6 +273,7 @@ public class MainActivity extends AppCompatActivity {
         gv_res = 0;
         str_his = "";
         str_num = "0";
+        stropr_last = "=";
         hasDot = false;
         isLastOpr = true;
     }
