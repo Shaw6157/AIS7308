@@ -8,4 +8,8 @@
     <color name="colorBgBtn_pressed">#97a7e0</color>
     <color name="colorBgOpr">#8CD7D3</color>
     <color name="colorFont">#554B88</color>
+    <color name="btnRed">#FF8163</color>
+    <color name="btnYel">#FCA856</color>
+    <color name="btnGre">#B3CA3C</color>
+    <color name="btnBlu">#47C171</color>
 </resources>

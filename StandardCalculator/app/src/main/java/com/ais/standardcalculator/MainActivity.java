@@ -144,10 +144,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("what click: ", " " + v.getId());
                 break;
         }
-
-//        Log.d("final num : ", " " + gv_num + "   result: " + gv_res);
-//        Log.d("final scr num : ", " " + str_num + "   result: " + str_his);
-
         tvhis.setText(str_his);
         tvres.setText(toInt(str_num));
     }
