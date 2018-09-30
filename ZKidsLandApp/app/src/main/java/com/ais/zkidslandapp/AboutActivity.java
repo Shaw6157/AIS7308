@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -11,10 +12,14 @@ public class AboutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-    }
 
-    public void backHome (View v) {
-        Intent intentHome = new Intent(this, MainActivity.class);
-        startActivity(intentHome);
+        Button btnAbout = (Button) findViewById(R.id.btn_back);
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentHome = new Intent(AboutActivity.this, MainActivity.class);
+                startActivity(intentHome);
+            }
+        });
     }
 }

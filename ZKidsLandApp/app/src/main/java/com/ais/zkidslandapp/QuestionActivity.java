@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class QuestionActivity extends AppCompatActivity {
+public class QuestionActivity extends AppCompatActivity implements View.OnClickListener {
 
     TextView tvTitle_Q, tvQuestion, tv_time, tv_progress;
     Button btnNum1, btnNum2, btnNum3, btnNum4;
@@ -54,88 +54,81 @@ public class QuestionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        tvQuestion  = (TextView) findViewById(R.id.tvQuestion);
-        tv_time     = (TextView) findViewById(R.id.tv_time);
-        tv_progress = (TextView) findViewById(R.id.tv_progress);
-        imgx1 = (ImageView) findViewById(R.id.imgx1);
-        imgx2 = (ImageView) findViewById(R.id.imgx2);
-        imgx3 = (ImageView) findViewById(R.id.imgx3);
-        imglv = (ImageView) findViewById(R.id.imglv);
-        imgmark = (ImageView) findViewById(R.id.imgMark);
-
-        btnNum1 = (Button) findViewById(R.id.btnNum1);
-        btnNum2 = (Button) findViewById(R.id.btnNum2);
-        btnNum3 = (Button) findViewById(R.id.btnNum3);
-        btnNum4 = (Button) findViewById(R.id.btnNum4);
-
+        //get operator from MainActivity
         pi_operator = this.getIntent().getExtras().get("p_operator").toString();
-
-        tv_progress.setText("0/" + gv_amount);
+        //start the timer
         handler.postDelayed(runthread, 1000);
 
+        initView();
         initSound();
         loadData();
     }
 
-    public void btnCheck (View v){
-        if (isOver){
-            return;
-        }
+    private void initView() {
+        tvQuestion  = findViewById(R.id.tv_Question);
+        tv_time     = findViewById(R.id.tv_time);
+        tv_progress = findViewById(R.id.tv_progress);
+        tv_progress.setText("0/" + gv_amount);  //init the text
+        imgx1       = findViewById(R.id.img_x1);
+        imgx2       = findViewById(R.id.img_x2);
+        imgx3       = findViewById(R.id.img_x3);
+        imglv       = findViewById(R.id.img_lv);
+        imgmark     = findViewById(R.id.img_Mark);
 
+        btnNum1 = (Button) findViewById(R.id.btn_Num1);
+        btnNum2 = (Button) findViewById(R.id.btn_Num2);
+        btnNum3 = (Button) findViewById(R.id.btn_Num3);
+        btnNum4 = (Button) findViewById(R.id.btn_Num4);
 
-        if (v.getId() == rightid){
-            playClick(soundRight);
+        btnNum1.setOnClickListener(this);
+        btnNum2.setOnClickListener(this);
+        btnNum3.setOnClickListener(this);
+        btnNum4.setOnClickListener(this);
 
-            gv_right++;
-            currentlv = gv_right / gv_lvgap + 1;
-            if (gv_right % gv_lvgap == 0) {
-                playClick(soundLvup);
+        imgmark.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isOver){
+                    soundPool.stop(streamId);
+                    playClick(soundQuestion);
+                    q_timer = 0;
+                    gv_right = 0;
+                    gv_wrong = 0;
+                    currentlv = 1;
+                    list.clear();
+                    tv_progress.setText("0/" + gv_amount);
+                    handler.postDelayed(runthread, 1000);
+
+                    imgx1.setImageResource(0);
+                    imgx2.setImageResource(0);
+                    imgx3.setImageResource(0);
+                    imgmark.setImageResource(R.drawable.qmarks2);
+
+                    isOver = false;
+                    loadData();
+                }
             }
+        });
+    }
 
-            if (currentlv == 1) {
-                imglv.setImageResource(R.drawable.lv1);
-            } else if (currentlv == 2) {
-                imglv.setImageResource(R.drawable.lv2);
-            } else {
-                imglv.setImageResource(R.drawable.lv3);
-            }
-        } else {
-            playClick(soundWrong);
-            gv_wrong++;
-            if (gv_wrong == 1) {
-                imgx1.setImageResource(R.drawable.xmark);
-            } else if (gv_wrong == 2) {
-                imgx2.setImageResource(R.drawable.xmark);
-            } else {
-                imgx3.setImageResource(R.drawable.xmark);
-            }
-        }
+    @SuppressLint("NewApi")
+    private void initSound() {
+        soundPool = new SoundPool.Builder().build();
 
-        if (gv_wrong == 3) {
-            playClick(soundDeath);
-            isOver = true;
-            handler.removeCallbacks(runthread);
-            tvQuestion.setText("Try again? ");
-            imgmark.setImageResource(R.drawable.refresh);
-            Toast.makeText(this, "Over !", Toast.LENGTH_SHORT).show();
-        } else if (gv_right == gv_amount) {
-            playClick(soundWin);
-            imgx1.setImageResource(0);
-            isOver = true;
-            handler.removeCallbacks(runthread);
-            tv_progress.setText(gv_right + "/" + gv_amount);
-            tvQuestion.setText("Congrats !");
-            imgmark.setImageResource(R.drawable.refresh);
-            Toast.makeText(this, "Victory !", Toast.LENGTH_SHORT).show();
-        } else {
-            tv_progress.setText(gv_right + "/" + gv_amount);
-            loadData();
-        }
+        soundRight = soundPool.load(this, R.raw.coin, 1);
+        soundWrong = soundPool.load(this, R.raw.brockbreak, 1);
+        soundDeath = soundPool.load(this, R.raw.death, 1);
+        soundWin = soundPool.load(this, R.raw.goal, 1);
+        soundLvup = soundPool.load(this, R.raw.powerup, 1);
+        soundQuestion = soundPool.load(this, R.raw.jump, 1);
+        soundStart = soundPool.load(this, R.raw.mario, 1);
     }
 
     private void loadData(){
         int lv_num2 = rollDice(10 * currentlv);
         int lv_num1 = 0;
+
+        //make "divide" reasonable
         if ("/".equals(pi_operator)){
             lv_num1 = lv_num2 * (rollDice(4) + currentlv);
         } else {
@@ -197,44 +190,64 @@ public class QuestionActivity extends AppCompatActivity {
         return new Random().nextInt(sides);
     }
 
-    public void btnRefresh(View v) {
+    @Override
+    public void onClick(View v) {
         if (isOver){
-            soundPool.stop(streamId);
-            playClick(soundQuestion);
-            q_timer = 0;
-            gv_right = 0;
-            gv_wrong = 0;
-            currentlv = 1;
-            list.clear();
-            tv_progress.setText("0/" + gv_amount);
-            handler.postDelayed(runthread, 1000);
+            return;
+        }
 
+        if (v.getId() == rightid){
+            playClick(soundRight);
+
+            gv_right++;
+            currentlv = gv_right / gv_lvgap + 1;
+            if (gv_right % gv_lvgap == 0) {
+                playClick(soundLvup);
+            }
+
+            if (currentlv == 1) {
+                imglv.setImageResource(R.drawable.lv1);
+            } else if (currentlv == 2) {
+                imglv.setImageResource(R.drawable.lv2);
+            } else {
+                imglv.setImageResource(R.drawable.lv3);
+            }
+        } else {
+            playClick(soundWrong);
+            gv_wrong++;
+            if (gv_wrong == 1) {
+                imgx1.setImageResource(R.drawable.xmark);
+            } else if (gv_wrong == 2) {
+                imgx2.setImageResource(R.drawable.xmark);
+            } else {
+                imgx3.setImageResource(R.drawable.xmark);
+            }
+        }
+
+        if (gv_wrong == 3) {
+            playClick(soundDeath);
+            isOver = true;
+            handler.removeCallbacks(runthread);
+            tvQuestion.setText("Try again? ");
+            imgmark.setImageResource(R.drawable.refresh);
+            Toast.makeText(this, "Over !", Toast.LENGTH_SHORT).show();
+        } else if (gv_right == gv_amount) {
+            playClick(soundWin);
             imgx1.setImageResource(0);
-            imgx2.setImageResource(0);
-            imgx3.setImageResource(0);
-            imgmark.setImageResource(R.drawable.qmarks2);
-
-            isOver = false;
+            isOver = true;
+            handler.removeCallbacks(runthread);
+            tv_progress.setText(gv_right + "/" + gv_amount);
+            tvQuestion.setText("Congrats !");
+            imgmark.setImageResource(R.drawable.refresh);
+            Toast.makeText(this, "Victory !", Toast.LENGTH_SHORT).show();
+        } else {
+            tv_progress.setText(gv_right + "/" + gv_amount);
             loadData();
         }
-    }
-
-    @SuppressLint("NewApi")
-    private void initSound() {
-        soundPool = new SoundPool.Builder().build();
-
-        soundRight = soundPool.load(this, R.raw.coin, 1);
-        soundWrong = soundPool.load(this, R.raw.brockbreak, 1);
-        soundDeath = soundPool.load(this, R.raw.death, 1);
-        soundWin = soundPool.load(this, R.raw.goal, 1);
-        soundLvup = soundPool.load(this, R.raw.powerup, 1);
-        soundQuestion = soundPool.load(this, R.raw.jump, 1);
-        soundStart = soundPool.load(this, R.raw.mario, 1);
     }
 
     private void playClick(int musicID) {
         streamId= soundPool.play(musicID, 1,1,1,0,1);
         // soundPool.stop(streamId);
     }
-
 }

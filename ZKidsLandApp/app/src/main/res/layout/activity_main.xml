@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lytRootM"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_main"
@@ -9,7 +10,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_Logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:alpha="0.9"
@@ -19,7 +20,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_Info"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -36,12 +37,14 @@
         android:background="@color/colorBg">
 
         <LinearLayout
+            android:id="@+id/lyt_Btns"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
 
             <LinearLayout
+                android:id="@+id/lyt_Btn1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
@@ -49,7 +52,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnPlus"
+                    android:id="@+id/btn_Plus"
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -58,23 +61,21 @@
                     android:layout_marginRight="29dp"
                     android:layout_weight="1"
                     android:alpha="08"
-                    android:background="@drawable/btn1"
-                    android:capitalize="characters"
-                    android:onClick="btnToQ" />
+                    android:background="@drawable/btn1" />
 
                 <Button
-                    android:id="@+id/btnMinus"
+                    android:id="@+id/btn_Minus"
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="29dp"
                     android:layout_marginRight="29dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn2"
-                    android:onClick="btnToQ" />
+                    android:background="@drawable/btn2" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lyt_Btn2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="10dp"
@@ -82,7 +83,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnMultiply"
+                    android:id="@+id/btn_Multiply"
                     android:layout_width="340dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -90,11 +91,10 @@
                     android:layout_marginLeft="29dp"
                     android:layout_marginRight="29dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn3"
-                    android:onClick="btnToQ" />
+                    android:background="@drawable/btn3" />
 
                 <Button
-                    android:id="@+id/btnDivide"
+                    android:id="@+id/btn_Divide"
                     android:layout_width="340dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -102,25 +102,24 @@
                     android:layout_marginLeft="29dp"
                     android:layout_marginRight="29dp"
                     android:layout_weight="1"
-                    android:background="@drawable/btn4"
-                    android:onClick="btnToQ" />
+                    android:background="@drawable/btn4" />
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/lyt_BtnAbout"
                 android:layout_width="150dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btnAbout"
-                    android:layout_width="80dp"
+                    android:id="@+id/btn_About"
+                    android:layout_width="64dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_margin="45dp"
+                    android:layout_margin="40dp"
                     android:layout_weight="1"
                     android:background="@drawable/information"
-                    android:onClick="goAbout"
                     android:text="About" />
             </LinearLayout>
         </LinearLayout>
