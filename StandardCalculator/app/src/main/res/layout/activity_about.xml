@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lytRootAbout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBg"
@@ -43,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Version 1.0"
+            android:text="Version 1.1"
             android:textStyle="italic" />
 
         <LinearLayout
@@ -76,17 +77,19 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:onClick="backHome"
             android:text="Back"
             android:textSize="18sp" />
 
 
         <TextView
             android:id="@+id/tv_desc"
-            android:layout_width="match_parent"
+            android:layout_width="293dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
-            android:text="This is a trial version for non-commercial use." />
+            android:lineSpacingExtra="4sp"
+            android:text="This is a trial version for non-commercial use. V1.0: using style in button; finish calculate V1.1: changed to EventHandler, bug fixed"
+            android:textAlignment="viewStart" />
     </LinearLayout>
 </LinearLayout>

@@ -15,17 +15,17 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     //music part
     SoundPool soundPool;
-    int soundNum, soundOpr, streamId;
+    int soundNum, soundOpr, soundCoin, streamId;
 
     //view part
     Button btn1, btn2, btn3, btn4,
             btn5, btn6, btn7, btn8,
-            btn9, btn0, btnC, btnCE,
+            btn9, btn0, btnCE,
             btnPlu, btnMin, btnMul, btnDiv,
             btnEqu, btnPM, btnBS, btnDot, btnAbout;
     TextView tvhis, tvres;
 
-    //value part
+    //variable part
     float gv_num = 0;
     float gv_res = 0;
     String str_num, str_his, str_temp;
@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                soundPool.play(soundCoin, 1,1,1,0,2);
                 Intent intentAbout = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(intentAbout);
             }
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     public void initSound() {
         soundPool = new SoundPool.Builder().build();
         soundNum = soundPool.load(this, R.raw.koural, 1);
-        soundOpr = soundPool.load(this, R.raw.coin, 1);
+        soundCoin = soundPool.load(this, R.raw.coin, 1);
         soundOpr = soundPool.load(this, R.raw.koural, 1);
     }
 
@@ -187,6 +188,9 @@ public class MainActivity extends AppCompatActivity {
             tvres.setText(toInt(str_num));
         }
 
+        /**
+         * @param p_num
+         */
         private void clickNum(String p_num) {
             playSound(soundNum);
 
@@ -206,8 +210,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return;
                 case "BS":  //backspce
-                    if ((str_num != null) && str_num.length() == 1){
+                    if (((str_num != null) && str_num.length() == 1) || (str_num.length() == 2 && str_num.startsWith("-"))){
                         str_num = "0";
+                        stropr_last = "=";
+                        hasDot = false;
+                        isLastOpr = true;
                     } else {
                         str_num = str_num.substring(0, str_num.length() - 1);
                     }
@@ -234,6 +241,9 @@ public class MainActivity extends AppCompatActivity {
             isLastOpr = false;
         }
 
+        /**
+         * @param p_opr
+         */
         private void clickOpr(String p_opr) {
             playSound(soundOpr);
             if ("E".equals(str_num)) {
@@ -303,11 +313,18 @@ public class MainActivity extends AppCompatActivity {
             isLastOpr = true;
         }
 
+        /**
+         * @param musicID
+         */
         private void playSound(int musicID) {
             streamId= soundPool.play(musicID, 1,1,1,0,2);
             // soundPool.stop(streamId);
         }
 
+        /**
+         * @param p_str
+         * @return
+         */
         private String toInt (String p_str) {
             return p_str.endsWith(".0") ? p_str.substring(0, p_str.length() - 2) : p_str;
         }
