@@ -15,7 +15,6 @@
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/colorFont</item>
-        <item name="android:onClick">btnClick</item>
     </style>
     <style name="Sty_NumButton" parent="@style/Sty_OprButton">
         <item name="android:background">@drawable/btn_num_shape</item>
