@@ -14,45 +14,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:rotation="-2"
         app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/btn_sports"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        style="@style/Sty_MainBtn"
         android:background="@color/colorbtn1"
-        android:rotation="-5"
-        android:text="SPORTS" />
+        android:text="@string/main_menu1" />
 
     <Button
         android:id="@+id/btn_colours"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        style="@style/Sty_MainBtn"
         android:background="@color/colorbtn2"
-        android:rotation="-5"
-        android:text="COLOURS" />
+        android:text="@string/main_menu2" />
 
     <Button
         android:id="@+id/btn_androids"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        style="@style/Sty_MainBtn"
         android:background="@color/colorbtn3"
-        android:rotation="-5"
-        android:text="Androids" />
+        android:text="@string/main_menu3" />
 
     <Button
         android:id="@+id/btn_about"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="10dp"
+        style="@style/Sty_MainBtn"
         android:background="@color/colorbtn4"
-        android:rotation="-5"
-        android:text="- About -" />
+        android:text="@string/main_menu4" />
 </LinearLayout>

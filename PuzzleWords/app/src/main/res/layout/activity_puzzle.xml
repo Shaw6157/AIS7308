@@ -99,6 +99,7 @@
                 android:id="@+id/tv_hint"
                 android:layout_width="match_parent"
                 android:layout_height="83dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:fontFamily="casual"
@@ -106,15 +107,35 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btn_quit"
-                android:layout_width="80dp"
-                android:layout_height="47dp"
-                android:layout_gravity="end"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/quit" />
+            <LinearLayout
+                android:id="@+id/lyt_rt_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_again"
+                    android:layout_width="80dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rt_again" />
+
+                <Button
+                    android:id="@+id/btn_quit"
+                    android:layout_width="80dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rt_quit" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -125,129 +146,22 @@
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:background="@drawable/background"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/editText2"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
+            style="@style/Sty_AnswerLetter" />
 
         <TextView
             android:id="@+id/editText17"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"
             android:fontFamily="casual"
             android:gravity="center_horizontal"
             android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText16"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText15"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText14"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText13"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText12"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText11"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
-            android:textAllCaps="true"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/editText10"
-            android:layout_width="40dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:inputType="textPersonName"
-            android:text="?"
+            android:text="x"
             android:textAllCaps="true"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -268,140 +182,117 @@
         <Button
             android:id="@+id/btn11"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/lta"
-            android:rotation="5" />
+            android:background="@drawable/lta" />
 
         <Button
             android:id="@+id/btn12"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltb"
-            android:rotation="5" />
+            android:background="@drawable/ltb" />
 
         <Button
             android:id="@+id/btn13"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltc"
-            android:rotation="5" />
+            android:background="@drawable/ltc" />
 
         <Button
             android:id="@+id/btn14"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltd"
-            android:rotation="5" />
+            android:background="@drawable/ltd" />
 
         <Button
             android:id="@+id/btn15"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/lte"
-            android:rotation="5" />
+            android:background="@drawable/lte" />
 
         <Button
             android:id="@+id/btn16"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltf"
-            android:rotation="5" />
+            android:background="@drawable/ltf" />
 
         <Button
             android:id="@+id/btn17"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltg"
-            android:rotation="5" />
+            android:background="@drawable/ltg" />
 
         <Button
             android:id="@+id/btn18"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/lth"
-            android:rotation="5" />
+            android:background="@drawable/lth" />
 
         <Button
             android:id="@+id/btn19"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/lti"
-            android:rotation="5" />
+            android:background="@drawable/lti" />
 
         <Button
             android:id="@+id/btn21"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltj"
-            android:rotation="5" />
+            android:background="@drawable/ltj" />
 
         <Button
             android:id="@+id/btn22"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltk"
-            android:rotation="5" />
+            android:background="@drawable/ltk" />
 
         <Button
             android:id="@+id/btn23"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltl"
-            android:rotation="5" />
+            android:background="@drawable/ltl" />
 
         <Button
             android:id="@+id/btn24"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltm"
-            android:rotation="5" />
+            android:background="@drawable/ltm" />
 
         <Button
             android:id="@+id/btn25"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltn"
-            android:rotation="5" />
+            android:background="@drawable/ltn" />
 
         <Button
             android:id="@+id/btn26"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/lto"
-            android:rotation="5" />
+            android:background="@drawable/lto" />
 
         <Button
             android:id="@+id/btn27"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltp"
-            android:rotation="5" />
+            android:background="@drawable/ltp" />
 
         <Button
             android:id="@+id/btn28"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltq"
-            android:rotation="5" />
+            android:background="@drawable/ltq" />
 
         <Button
             android:id="@+id/btn29"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltr"
-            android:rotation="5" />
+            android:background="@drawable/ltr" />
 
         <Button
             android:id="@+id/btn31"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/lts"
-            android:rotation="5" />
+            android:background="@drawable/lts" />
 
         <Button
             android:id="@+id/btn32"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltt"
-            android:rotation="5" />
+            android:background="@drawable/ltt" />
 
         <Button
             android:id="@+id/btn33"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltu"
-            android:rotation="5" />
+            android:background="@drawable/ltu" />
 
         <Button
             android:id="@+id/btn34"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltv"
-            android:rotation="5" />
+            android:background="@drawable/ltv" />
 
         <Button
             android:id="@+id/btn35"
             style="@style/Sty_LetterButton"
-            android:background="@drawable/ltw"
-            android:rotation="5" />
+            android:background="@drawable/ltw" />
 
         <Button
             android:id="@+id/btn36"
