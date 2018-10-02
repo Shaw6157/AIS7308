@@ -24,6 +24,7 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
     String str_question;
     int gv_wrong;   //how many times you pressed the wrong letter
     int gv_left;    //how many ? left
+    boolean isOver = false;
 
     ImageView imgx1, imgx2, imgx3, imghman;
     TextView tv_hint;
@@ -126,6 +127,7 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
         //counters reset
         gv_wrong = 0;
         gv_left = 0;
+        isOver = false;
 
         for (Button eachbutton:btns){
             eachbutton.setVisibility(View.VISIBLE);
@@ -144,7 +146,6 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
         }
         str_question = questions[rollDice(questions.length)];
         Log.d("==========answer:  ", str_question);
-//        Toast.makeText(this, " aaaa !   " + str_question, Toast.LENGTH_SHORT).show();
 
         if (str_question != null && str_question.length() > 0) {
             gv_left = str_question.length();
@@ -168,6 +169,10 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        if (isOver) {
+            return;
+        }
+
         if (gv_left == 0) {
             return;
         }
@@ -208,6 +213,7 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
                 playClick(soundWin);
                 tv_hint.setText("CONGRATS ! You win !");
                 btnagain.setVisibility(View.VISIBLE);
+                isOver = true;
                 return;
             }
             playClick(soundRight);
@@ -222,6 +228,8 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
                 imgx2.setImageResource(R.drawable.xmark);
             } else {
                 playClick(soundLose);
+                Toast.makeText(this, " Here is the word :   >>" + str_question + "<<", Toast.LENGTH_LONG).show();
+                isOver = true;
                 tv_hint.setText("SORRY,  GAME OVER");
                 imghman.setImageResource(R.drawable.hman3);
                 imgx3.setImageResource(R.drawable.xmark);

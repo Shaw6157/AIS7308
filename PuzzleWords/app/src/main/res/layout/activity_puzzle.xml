@@ -35,7 +35,7 @@
                 <ImageView
                     android:id="@+id/img_hman"
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                    android:layout_height="190dp"
                     app:srcCompat="@drawable/hman2" />
             </LinearLayout>
 
@@ -151,7 +151,8 @@
 
         <TextView
             android:id="@+id/editText2"
-            style="@style/Sty_AnswerLetter" />
+            style="@style/Sty_AnswerLetter"
+            android:text="X" />
 
         <TextView
             android:id="@+id/editText17"
@@ -168,148 +169,175 @@
 
     </LinearLayout>
 
-    <GridLayout
-        android:id="@+id/lytBtn"
+    <LinearLayout
+        android:id="@+id/lyt_keys"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_margin="5dp"
-        android:alpha="0.8"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
         android:background="@color/color1"
-        android:columnCount="9"
-        android:rowCount="3">
+        android:orientation="vertical"
+        android:padding="5dp">
 
-        <Button
-            android:id="@+id/btn11"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lta" />
+        <LinearLayout
+            android:id="@+id/lyt_key1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn12"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltb" />
+            <Button
+                android:id="@+id/btn11"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lta" />
 
-        <Button
-            android:id="@+id/btn13"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltc" />
+            <Button
+                android:id="@+id/btn12"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltb" />
 
-        <Button
-            android:id="@+id/btn14"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltd" />
+            <Button
+                android:id="@+id/btn13"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltc" />
 
-        <Button
-            android:id="@+id/btn15"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lte" />
+            <Button
+                android:id="@+id/btn14"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltd" />
 
-        <Button
-            android:id="@+id/btn16"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltf" />
+            <Button
+                android:id="@+id/btn15"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lte" />
 
-        <Button
-            android:id="@+id/btn17"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltg" />
+            <Button
+                android:id="@+id/btn16"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltf" />
 
-        <Button
-            android:id="@+id/btn18"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lth" />
+            <Button
+                android:id="@+id/btn17"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltg" />
 
-        <Button
-            android:id="@+id/btn19"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lti" />
+            <Button
+                android:id="@+id/btn18"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lth" />
 
-        <Button
-            android:id="@+id/btn21"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltj" />
+            <Button
+                android:id="@+id/btn19"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lti" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn22"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltk" />
+        <LinearLayout
+            android:id="@+id/lyt_key2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn23"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltl" />
+            <Button
+                android:id="@+id/btn21"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltj" />
 
-        <Button
-            android:id="@+id/btn24"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltm" />
+            <Button
+                android:id="@+id/btn22"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltk" />
 
-        <Button
-            android:id="@+id/btn25"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltn" />
+            <Button
+                android:id="@+id/btn23"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltl" />
 
-        <Button
-            android:id="@+id/btn26"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lto" />
+            <Button
+                android:id="@+id/btn24"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltm" />
 
-        <Button
-            android:id="@+id/btn27"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltp" />
+            <Button
+                android:id="@+id/btn25"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltn" />
 
-        <Button
-            android:id="@+id/btn28"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltq" />
+            <Button
+                android:id="@+id/btn26"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lto" />
 
-        <Button
-            android:id="@+id/btn29"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltr" />
+            <Button
+                android:id="@+id/btn27"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltp" />
 
-        <Button
-            android:id="@+id/btn31"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lts" />
+            <Button
+                android:id="@+id/btn28"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltq" />
 
-        <Button
-            android:id="@+id/btn32"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltt" />
+            <Button
+                android:id="@+id/btn29"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltr" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn33"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltu" />
+        <LinearLayout
+            android:id="@+id/lyt_key3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn34"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltv" />
+            <Button
+                android:id="@+id/btn31"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lts" />
 
-        <Button
-            android:id="@+id/btn35"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltw" />
+            <Button
+                android:id="@+id/btn32"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltt" />
 
-        <Button
-            android:id="@+id/btn36"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltx"
-            android:rotation="5" />
+            <Button
+                android:id="@+id/btn33"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltu" />
 
-        <Button
-            android:id="@+id/btn37"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/lty"
-            android:rotation="5" />
+            <Button
+                android:id="@+id/btn34"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltv" />
 
-        <Button
-            android:id="@+id/btn38"
-            style="@style/Sty_LetterButton"
-            android:background="@drawable/ltz"
-            android:rotation="5" />
-    </GridLayout>
+            <Button
+                android:id="@+id/btn35"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltw" />
+
+            <Button
+                android:id="@+id/btn36"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltx"
+                android:rotation="5" />
+
+            <Button
+                android:id="@+id/btn37"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/lty"
+                android:rotation="5" />
+
+            <Button
+                android:id="@+id/btn38"
+                style="@style/Sty_LetterButton"
+                android:background="@drawable/ltz"
+                android:rotation="5" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
