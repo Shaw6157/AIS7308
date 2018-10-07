@@ -180,7 +180,6 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
         v.setVisibility(View.INVISIBLE);
 
         int index_key = 0;      //which key is pressed
-        int index_answer = 0;   //which letter is shown
         char c_show = '0';
         boolean isRight = false;
 
@@ -194,10 +193,8 @@ public class PuzzleActivity extends Activity implements View.OnClickListener {
 
         //compare key with answer letters
         char[] chars = str_question.toUpperCase().toCharArray();
-//        Toast.makeText(this, "ii:   " + index_key + "   key  :  " + charletters[index_key], Toast.LENGTH_SHORT).show();
         for (int j = 0; j < chars.length; j ++){
-            if (chars[j] == charletters[index_key]){
-                index_answer = j;
+            if (chars[j] == charletters[index_key]){        //which letter is shown
                 c_show = chars[j];
                 Log.d("==========correct:  ", "" + c_show);
 
