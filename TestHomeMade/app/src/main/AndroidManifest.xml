@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ais.demolist">
+    package="com.ais.testhomemade">
 
     <application
         android:allowBackup="true"
@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListDataActivity" />
-        <activity android:name=".EditDataActivity"></activity>
+        <activity android:name=".OrderActivity" />
+        <activity android:name=".CartActivity"></activity>
     </application>
 
 </manifest>
