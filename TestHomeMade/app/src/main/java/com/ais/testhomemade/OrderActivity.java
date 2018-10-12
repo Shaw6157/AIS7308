@@ -37,7 +37,8 @@ public class OrderActivity extends AppCompatActivity {
 
         String p_menutype = this.getIntent().getExtras().getString("menutype");
         ArrayList<ShawMenu> menus = db.getAllMenus(p_menutype);
-        final ArrayList<String> myorders = new ArrayList<String>();
+//        final ArrayList<String> myorders = new ArrayList<String>();
+        final ArrayList<ShawMenu> myorders = new ArrayList<ShawMenu>();
 
         for (int i = 0; i < menus.size(); i ++) {
             final ShawMenu eachMenu = menus.get(i);
@@ -66,7 +67,8 @@ public class OrderActivity extends AppCompatActivity {
                     gv_amount += price;
                     tv_number.setText("  " + gv_number + "  ");
                     tv_amount.setText(" " + gv_amount);
-                    myorders.add(eachMenu.getName());
+//                    myorders.add(eachMenu.getName());
+                    myorders.add(eachMenu);
                 }
             });
 
@@ -81,12 +83,12 @@ public class OrderActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(OrderActivity.this, CartActivity.class);
 
-//                Bundle args = new Bundle();
-//                args.putSerializable("ARRAYLIST",(Serializable)myorders);
-//                intent.putExtra("myorders",args);
+                Bundle args = new Bundle();
+                args.putSerializable("orderlist", myorders);
+                intent.putExtras(args);
 
-                intent.putExtra("myorders", myorders);
-//                intent.putExtra("amount", myorders);
+//                intent.putExtra("myorders", myorders);
+
 //
 //                tv_number.setText("  " + gv_number + "  ");
 //                tv_amount.setText(" " + gv_amount);

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
     GridLayout lytorders;
+    ArrayList<ShawMenu> lvMyorders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +20,12 @@ public class CartActivity extends AppCompatActivity {
 
         lytorders = findViewById(R.id.lytorders);
 
-//        ArrayList<ShawMenu> myorders = (ArrayList<ShawMenu>) this.getIntent().getSerializableExtra("myorders");
 
-//        Intent intent = getIntent();
-//        Bundle args = intent.getBundleExtra("myorders");
-//        ArrayList<ShawMenu> myorders = (ArrayList<ShawMenu>) args.getSerializable("ARRAYLIST");
+//        Bundle bundle = getIntent().getExtras();
+//        ArrayList<String> lvMyorders = (ArrayList<String>) bundle.getStringArrayList("myorders");
 
-//        ArrayList<ShawMenu> lvMyorders =
-//                (ArrayList<ShawMenu>) this.getIntent().getSerializableExtra("myorders");
-//
         Bundle bundle = getIntent().getExtras();
-        ArrayList<String> lvMyorders = (ArrayList<String>) bundle.getStringArrayList("myorders");
+        lvMyorders = (ArrayList<ShawMenu>) bundle.getSerializable("orderlist");
 
 
         if (lvMyorders != null){
@@ -37,12 +33,13 @@ public class CartActivity extends AppCompatActivity {
         }
 
         for (int i = 0; i < lvMyorders.size(); i ++) {
-            String oneorder = lvMyorders.get(i);
+//            String oneorder = lvMyorders.get(i);
+            ShawMenu oneorder = lvMyorders.get(i);
             TextView tvID = new TextView(this);
             TextView tvName = new TextView(this);
             int num = i + 1;
             tvID.setText(" " + num + " ");
-            tvName.setText("             " + oneorder);
+            tvName.setText("             " + oneorder.getName());
 
             lytorders.addView(tvID);
             lytorders.addView(tvName);

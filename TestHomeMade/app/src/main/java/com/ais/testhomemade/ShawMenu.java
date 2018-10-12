@@ -1,6 +1,8 @@
 package com.ais.testhomemade;
 
-public class ShawMenu {
+import java.io.Serializable;
+
+public class ShawMenu implements Serializable {
     private int menuID;
     private String name;
     private int price;
