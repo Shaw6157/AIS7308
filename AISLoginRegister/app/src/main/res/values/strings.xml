@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AISLoginRegister</string>
+
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Register Me</string>
+    <string name="btn_home">Home</string>
+    <string name="btn_save">Save Student</string>
+
+    <string name="hint_login">Enter your ID here!</string>
+    <string name="hint_pwd">Enter your password.</string>
+    <string name="hint_pwd_confirm">Confirm password.</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    tools:context=".AIS_RegisterStudentActivity">
+
+    <ImageView
+        android:id="@+id/img_rs_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/logo_ais" />
+
+    <EditText
+        android:id="@+id/et_rs_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dp"
+        android:hint="@string/hint_login"
+        android:width="250dp"
+        />
+
+    <EditText
+        android:id="@+id/et_rs_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:hint="@string/hint_pwd"
+        android:width="250dp"
+        />
+
+    <EditText
+        android:id="@+id/et_rs_password_repeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:hint="@string/hint_pwd_confirm"
+        android:width="250dp"
+        />
+
+    <Button
+        android:id="@+id/btn_rs_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:width="150dp"
+        android:text="@string/btn_save"
+        android:textAllCaps="false" />
+
+</LinearLayout>

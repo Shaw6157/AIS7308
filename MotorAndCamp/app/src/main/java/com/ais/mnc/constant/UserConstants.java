@@ -9,4 +9,5 @@ package com.ais.mnc.constant;
  * @date: 14/10
  */
 public class UserConstants {
+    //TODO
 }

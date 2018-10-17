@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lyt_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    tools:context=".AIS_LoginRegisterActivity">
+
+    <ImageView
+        android:id="@+id/img_lr_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/logo_ais" />
+
+    <TextView
+        android:id="@+id/tv_lr_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Auckland Institute of Studies"
+        android:textSize="24sp"
+        android:layout_marginTop="60dp"
+        />
+
+    <Button
+        android:id="@+id/btn_lr_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dp"
+        android:text="@string/btn_login"
+        android:width="150dp"
+        />
+
+    <Button
+        android:id="@+id/btn_lr_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:text="@string/btn_register"
+        android:width="150dp"
+        />
+</LinearLayout>

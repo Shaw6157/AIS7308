@@ -45,14 +45,14 @@ public class DemoDB extends SQLiteOpenHelper {
         db.close();
     }
 
-    public int getCountStudents() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "Select * from " + TABLE_NAME;
-        Cursor cursor = db.rawQuery(query, null);
+        public int getCountStudents() {
+            SQLiteDatabase db = this.getReadableDatabase();
+            String query = "Select * from " + TABLE_NAME;
+            Cursor cursor = db.rawQuery(query, null);
 
-        int count = cursor.getCount();
-        db.close();
-        cursor.close();
+            int count = cursor.getCount();
+            db.close();
+            cursor.close();
         return count;
     }
 
