@@ -34,10 +34,29 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/url1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lyt_root"
+        android:layout_marginStart="166dp"
+        android:text="111" />
+
+    <TextView
+        android:id="@+id/url2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/img_view"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="-59dp"
+        android:layout_marginEnd="154dp"
+        android:text="2222" />
+
     <ImageView
         android:id="@+id/img_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="372dp"
         android:layout_below="@+id/lyt_root"
-        />
+        android:layout_marginTop="59dp" />
 </RelativeLayout>

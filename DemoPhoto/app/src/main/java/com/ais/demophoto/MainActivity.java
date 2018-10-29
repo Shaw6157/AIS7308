@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn_choose, btn_upload;
     ImageView img_view;
+
+    TextView tv1, tv2;
 
     //choose
     private Uri filePath;
@@ -51,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         btn_choose = findViewById(R.id.btn_choose);
         btn_upload = findViewById(R.id.btn_upload);
         img_view = findViewById(R.id.img_view);
+
+        tv1 = findViewById(R.id.url1);
+        tv2 = findViewById(R.id.url2);
 
         btn_choose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             lvProgressDialog.dismiss();
+                            tv1.setText(ref.getDownloadUrl() + "");
+                            tv2.setText(taskSnapshot.getMetadata().getPath() + "");
                             Log.d("===path: ", ref.getDownloadUrl() + "");
                             Log.d("===meta: ", taskSnapshot.getMetadata().getPath() + "");
                             Toast.makeText(MainActivity.this, "uploaded succ: " + taskSnapshot.getMetadata().getPath(), Toast.LENGTH_SHORT).show();
@@ -113,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             filePath = data.getData();
