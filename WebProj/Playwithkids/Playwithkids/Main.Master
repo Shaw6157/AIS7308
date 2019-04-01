@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Playwithkids.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Play with Kids</title>
+    <link rel="icon" href="favicon.ico">
+    <!-- JqueryUI -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Awesome font icons -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="screen">
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+    <!-- Fw -->
+    <link rel="stylesheet" type="text/css" href="css/fw.css" media="screen">
+</head>
+<body>
+
+
+    <header>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12 col-md-2">
+                    <!-- Logo -->
+                    <a href="#" class="logo">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-10">
+                    <!-- Menu -->
+                    <div class="main-menu">
+                        <nav class="navbar navbar-default menu">
+                            <div class="container-fluid p-0">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                        <span class="sr-only">Buttons</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                                <div class="collapse navbar-collapse p-0" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav pull-right m-r-40 m-r-sm-0 m-r-xs-0">
+                                        <li class="dropdown">
+                                            <a href="Home.aspx" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toys</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="ToyList.aspx?type=baby">For Baby</a></li>
+                                                <li><a href="ToyList.aspx?type=kid">For Kids</a></li>
+                                                <li><a href="ToyList.aspx?type=children">For Children</a></li>
+                                             </ul>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="MyCart.aspx" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">My Cart</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="AdminLogin.aspx" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Staff</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Breadcrumd -->
+    <div class="container">
+        <ul class="breadcrumb">
+            <li>
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+            </asp:SiteMapPath>
+                </li>
+        </ul>
+    </div>
+    <!-- About -->
+    <section class="m-t-0">
+        <div class="container">
+            <div class="thumb p-30">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <!-- Content ff place holder -->
+                        <form id="form1" runat="server">
+                            <div>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="color-inher m-t-40">
+        <div class="bot-pie"></div>
+        <div class="footer-bt">
+            <div class="container">
+                <p>&copy; Copyright 2019. Company Playwithkids All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- JqueryUI -->
+    <script src="js/jquery/jquery-ui.js"></script>
+    <!-- Bootstrap -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- Magnific-popup -->
+    <script src="js/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Script -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

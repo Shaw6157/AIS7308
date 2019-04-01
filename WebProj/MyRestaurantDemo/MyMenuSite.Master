@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MyMenuSite.master.cs" Inherits="MyRestaurantDemo.MyMenuSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table class="auto-style1">
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem NavigateUrl="Menu.aspx?menuType=Lunch" Text="Lunch Menu" Value="Lunch Menu"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="Menu.aspx?menuType=Breakfast" Text="Breakfast" Value="Breakfast"></asp:MenuItem>
+                            <asp:MenuItem Text="New Item" Value="New Item"></asp:MenuItem>
+                        </Items>
+                        <StaticItemTemplate>
+                            <%# Eval("Text") %>
+                        </StaticItemTemplate>
+                    </asp:Menu>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

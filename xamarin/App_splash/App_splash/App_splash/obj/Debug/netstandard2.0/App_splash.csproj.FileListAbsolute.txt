@@ -1,0 +1,12 @@
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\bin\Debug\netstandard2.0\App_splash.deps.json
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\bin\Debug\netstandard2.0\App_splash.dll
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\bin\Debug\netstandard2.0\App_splash.pdb
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App_splash.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App_splash.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App_splash.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App_splash.AssemblyInfo.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App_splash.dll
+C:\Users\Admin\Documents\AIS7308\xamarin\App_splash\App_splash\App_splash\obj\Debug\netstandard2.0\App_splash.pdb

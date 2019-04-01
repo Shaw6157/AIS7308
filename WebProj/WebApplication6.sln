@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web_nav_demo", "WebApplication6\web_nav_demo.csproj", "{0A2D83AC-F7A9-4666-B6E4-04602589D27D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A2D83AC-F7A9-4666-B6E4-04602589D27D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A2D83AC-F7A9-4666-B6E4-04602589D27D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A2D83AC-F7A9-4666-B6E4-04602589D27D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A2D83AC-F7A9-4666-B6E4-04602589D27D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6E0D237-6092-47E8-A3FB-B5252C6B8CAD}
+	EndGlobalSection
+EndGlobal

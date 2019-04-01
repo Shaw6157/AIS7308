@@ -1,0 +1,6 @@
+C:\Users\Admin\Documents\AIS7308\xamarin\DBtest\DBtest\DBtest\obj\Debug\netstandard2.0\DBtest.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\DBtest\DBtest\DBtest\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\DBtest\DBtest\DBtest\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\DBtest\DBtest\DBtest\obj\Debug\netstandard2.0\DBtest.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\DBtest\DBtest\DBtest\obj\Debug\netstandard2.0\DBtest.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\DBtest\DBtest\DBtest\obj\Debug\netstandard2.0\DBtest.AssemblyInfo.cs

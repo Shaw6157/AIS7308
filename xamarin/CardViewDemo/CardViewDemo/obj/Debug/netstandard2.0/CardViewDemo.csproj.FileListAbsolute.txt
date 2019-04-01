@@ -1,0 +1,17 @@
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\bin\Debug\netstandard2.0\CardViewDemo.deps.json
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\bin\Debug\netstandard2.0\CardViewDemo.dll
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\bin\Debug\netstandard2.0\CardViewDemo.pdb
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\CardViewDemo.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\Views\NewItemPage.xaml.g.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\CardViewDemo.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\CardViewDemo.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\CardViewDemo.AssemblyInfo.cs
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\CardViewDemo.dll
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\CardViewDemo.pdb
+C:\Users\Admin\Documents\AIS7308\xamarin\CardViewDemo\CardViewDemo\obj\Debug\netstandard2.0\Views\ItemCard.xaml.g.cs

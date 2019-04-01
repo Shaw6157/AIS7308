@@ -1,22 +1,27 @@
 package com.ais.mymemodemo;
 
+import android.Manifest;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.provider.CalendarContract;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -25,17 +30,22 @@ import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.nio.Buffer;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     EditText et_memoid, et_memoinfo, et_memotype, et_memodate;
-    Button btn_add;
+    Button btn_add, btn_calendar;
     GridLayout lyt_memos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//        Log.d("cal::", "" + String.format("%05d", 123) + "|");
+//        Log.d("cal::", "" + String.format("%50d", 123) + "|");
+//        Log.d("cal::", "");
+//
 
         new GetMemos().execute();
 
@@ -44,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         et_memotype = findViewById(R.id.et_memotype);
         et_memodate = findViewById(R.id.et_memodate);
         btn_add = findViewById(R.id.btn_add);
+        btn_calendar = findViewById(R.id.btn_calendar);
         lyt_memos = findViewById(R.id.lyt_memos);
 
         btn_add.setOnClickListener(new View.OnClickListener() {
@@ -65,9 +76,58 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        btn_calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.READ_CALENDAR)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    Log.d(">>>>>","nnnn  RRR");
+                    ActivityCompat.requestPermissions(MainActivity.this,
+                            new String[]{Manifest.permission.READ_CALENDAR},
+                            1);
+                } else  if (ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.WRITE_CALENDAR)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    Log.d(">>>>>","nnnn  WWW");
+                    ActivityCompat.requestPermissions(MainActivity.this,
+                            new String[]{Manifest.permission.WRITE_CALENDAR},
+                            2);
+                } else {
+
+
+                    Log.d(">>>>>","yyyy");
+                    ContentResolver cr = MainActivity.this.getContentResolver();
+                    ContentValues cv = new ContentValues();
+
+                    cv.put(CalendarContract.Events.TITLE, "new 11 event");
+                    cv.put(CalendarContract.Events.DESCRIPTION, "QQQQQQQ");
+                    cv.put(CalendarContract.Events.EVENT_LOCATION, "here");
+                    cv.put(CalendarContract.Events.DTSTART, Calendar.getInstance().getTimeInMillis());
+                    cv.put(CalendarContract.Events.DTEND, Calendar.getInstance().getTimeInMillis() + 60 * 60 * 1000 * 6);
+                    cv.put(CalendarContract.Events.CALENDAR_ID, 3);
+                    cv.put(CalendarContract.Events.EVENT_TIMEZONE, Calendar.getInstance().getTimeZone().getID());
+
+                if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED) {
+
+                    Log.d(">>>>>","nnnn  222   WWW");
+                    return;
+                }
+
+                    Uri uri = cr.insert(CalendarContract.Events.CONTENT_URI, cv);
+                    Toast.makeText(MainActivity.this, "ok...", Toast.LENGTH_SHORT).show();
+
+
+                }
+
+            }
+        });
     }
 
-    private class SaveMemo extends AsyncTask <Void, Void, String> {
+    private class SaveMemo extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -138,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private class GetMemos extends AsyncTask <Void, Void, String> {
+    private class GetMemos extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... voids) {
