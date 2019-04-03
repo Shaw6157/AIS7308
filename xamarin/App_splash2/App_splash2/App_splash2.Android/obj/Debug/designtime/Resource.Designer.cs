@@ -2997,7 +2997,7 @@ namespace App_splash2.Droid
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
 			// aapt resource value: 0x7F010003
-			public const int Splash = 2130771971;
+			public const int sp = 2130771971;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
