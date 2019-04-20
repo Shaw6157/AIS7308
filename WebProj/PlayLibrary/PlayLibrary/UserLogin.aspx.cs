@@ -18,13 +18,17 @@ namespace PlayLibrary
         {
             User_DAL aLayer = new User_DAL();
             //check local
-            if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("admin"))
+            if (aLayer.LoginUser(txtUsername.Text, txtPassword.Text))
             {
-                Response.Redirect("AdminData.aspx");
-            }
-            else if (aLayer.LoginUser(txtUsername.Text, txtPassword.Text))
-            {
-                Response.Redirect("Home.aspx");
+                if (txtUsername.Text.Equals("admin"))
+                {
+                    Response.Redirect("AdminData.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
+
             }
             else
             {

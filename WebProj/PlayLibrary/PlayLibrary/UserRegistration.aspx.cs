@@ -18,37 +18,28 @@ namespace PlayLibrary
         //handle the event when clicking the button
         protected void BtnRegistration(object sender, EventArgs e)
         {
-            Context.Response.StatusCode = (int)System.Net.HttpStatusCode.Forbidden;
-            Context.Response.Flush();
+            User_DAL Userdal = new User_DAL();
 
-            //throw new HttpException(404, "N2....");
+            string UID = txtUserID.Text;
+            string UserName = txtUserName.Text;
+            string Password = txtPassword.Text;
+            string ConfirmPassword = txtConfirmPassword.Text;
 
-
-            Response.StatusCode = 403;
-            Response.Flush();
-            Response.End();
-
-            //User_DAL Userdal = new User_DAL();
-
-            //string UID = txtUserID.Text;
-            //string UserName = txtUserName.Text;
-            //string Password = txtPassword.Text;
-            //string ConfirmPassword = txtConfirmPassword.Text;
-
-            ////validations for input
-            //if (Password != ConfirmPasswored)
-            //{
-            //    ShowMessage("Please type the same password to confirm!");
-            //}
-            //else if (string.IsNullOrEmpty(UID) || string.IsNullOrEmpty(UserName)
-            //    || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
-            //{
-            //    ShowMessage("Please fill all fields to finish the registration!");
-            //}
-            //else
-            //{
-            //    Userdal.RegisterUser(UID, UserName, Password);
-            //}
+            //validations for input
+            if (Password != ConfirmPassword)
+            {
+                ShowMessage("Please type the same password to confirm!");
+            }
+            else if (string.IsNullOrEmpty(UID) || string.IsNullOrEmpty(UserName)
+                || string.IsNullOrEmpty(Password) || string.IsNullOrEmpty(ConfirmPassword))
+            {
+                ShowMessage("Please fill all fields to finish the registration!");
+            }
+            else
+            {
+                Userdal.RegisterUser(UID, UserName, Password);
+                Response.Redirect("UserLogin.aspx");
+            }
         }
 
         //show the message in the label field

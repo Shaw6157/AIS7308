@@ -22,10 +22,14 @@ namespace PlayLibrary
                 sqlConn = new SqlConnection(connStr);
                 sqlConn.Open();
 
-                string query_save = "insert into tblAPM_user values ('"
+                string query_save = "insert into tblUser values ('"
+                    //+ userID + "', '"
+                    + getHashed(userID, password) + "', '"
                     + userID + "', '"
                     + name + "', '"
-                    + getHashed(userID, password) + "')";
+                    + "" + "', "
+                    + "0"
+                    + ")";
 
                 SqlCommand sqlCmd = new SqlCommand(query_save, sqlConn);
                 sqlCmd.ExecuteNonQuery();
@@ -45,14 +49,18 @@ namespace PlayLibrary
                 sqlConn = new SqlConnection(connStr);
                 sqlConn.Open();
 
-                string query_select = "select * from tblAPM_user where UserID = '"
-                    + userID + "' and Password = '"
+                string query_select = "select * from tblUser where email = '"
+                    + userID + "' and password = '"
                     + getHashed(userID, password) + "'";
 
                 SqlCommand sqlCmd = new SqlCommand(query_select, sqlConn);
                 SqlDataReader reader = sqlCmd.ExecuteReader();
                 if (reader.HasRows)
                 {
+                    while (reader.Read()) {
+                        LoginCounter(reader.GetInt32(0), reader.GetInt32(5) + 1);
+                    }
+
                     return true;
                 }
                 return false;
@@ -63,7 +71,29 @@ namespace PlayLibrary
             }
         }
 
-        public string ResetPassword(string userID, string name)
+        public void LoginCounter(int userID, int num)
+        {
+            try
+            {
+                sqlConn = new SqlConnection(connStr);
+                sqlConn.Open();
+                
+                string query_save = "update tblUser " +
+                    "SET logintime = "
+                    + num + "" +
+                    " WHERE userID = '" + userID + "'";
+
+                SqlCommand sqlCmd = new SqlCommand(query_save, sqlConn);
+                sqlCmd.ExecuteNonQuery();
+                sqlConn.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public string ResetPassword(string userID, string userName)
         {
             try
             {
@@ -87,6 +117,7 @@ namespace PlayLibrary
                 throw;
             }
         }
+
 
         private string getHashed(string str, string strSalt)
         {

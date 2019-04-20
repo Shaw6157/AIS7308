@@ -7,7 +7,7 @@
                 <div class="col-sm-12 col-md-6 col-md-offset-3">
                     <h3 class="title">PlayLibrary User Login</h3>
                         <div class="form-group">
-                            <asp:Label class="control-label f-normal" ID="lblUsername" runat="server" Text="Username" />
+                            <asp:Label class="control-label f-normal" ID="lblUsername" runat="server" Text="Email" />
                             <asp:TextBox class="form-control form-item" ID="txtUsername" runat="server"></asp:TextBox>
 
                         </div>
