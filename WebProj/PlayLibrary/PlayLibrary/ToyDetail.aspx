@@ -28,8 +28,9 @@
                                         <li><span>Best for:</span> <%# Eval("type") %></li>
                                         <li><span>Made in:</span> <%# Eval("madein") %></li>
                                         <li><span>Availability:</span> In Stock</li>
+                                        <li><span>RRP:</span> <%# Eval("price") %></li>
                                     </ul>
-                                    <p class="product-price">$<%# Eval("price") %></p>
+                                    <p class="product-price">$<%# String.Format("{0:0.00}", Convert.ToDecimal(Eval("price")) * Convert.ToDecimal(Eval("pricedisc")))  %></p>
                                     <div class="quantily-wrap">
                                         <label class="control-label" for="input-quantity">Qty</label>
                                         <asp:TextBox runat="server" value="1" ID="txtQuantity" CssClass="form-control form-item" TextMode="Number" />

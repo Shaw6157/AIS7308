@@ -93,7 +93,7 @@
                                     <strong>Items:</strong>
                                 </div>
                                 <div class="col col-sm-6">
-                                    <asp:Label ID="allquan" Text="3" runat="server" />
+                                    <asp:Label ID="allquan" Text="0" runat="server" />
                                 </div>
                             </li>
                             <li class="row m-0">
@@ -101,7 +101,7 @@
                                     <strong>Total:</strong>
                                 </div>
                                 <div class="col col-sm-6">
-                                    <asp:Label ID="allamount" Text="$100.49" runat="server" />
+                                    <asp:Label ID="allamount" Text="$ 0.0" runat="server" />
                                 </div>
                             </li>
                         </ul>

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="PlayLibrary.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<section>
+<section class="m-0">
 	<div>
 		<div class="banner no-bg-img-xs bg-img-3 bg-size-9 bg-main">
 			<div class="caption">

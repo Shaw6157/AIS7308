@@ -63,6 +63,31 @@ namespace PlayLibrary
             }
         }
 
+        public string ResetPassword(string userID, string name)
+        {
+            try
+            {
+                sqlConn = new SqlConnection(connStr);
+                sqlConn.Open();
+
+                var password = "tLibrary" + new Random(999);
+
+                string query_save = "update tblAPM_user " +
+                    "SET password = '"
+                    + getHashed(userID, password) + "'" +
+                    " WHERE userID = '" + userID + "'";
+
+                SqlCommand sqlCmd = new SqlCommand(query_save, sqlConn);
+                sqlCmd.ExecuteNonQuery();
+                sqlConn.Close();
+                return password;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         private string getHashed(string str, string strSalt)
         {
             byte[] strByte  = ASCIIEncoding.ASCII.GetBytes(str + strSalt + "AIS");

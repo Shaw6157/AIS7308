@@ -15,7 +15,7 @@
                             <asp:TextBox class="form-control form-item" ID="txtUserName" runat="server"></asp:TextBox>
                         </div>
                         <p><asp:Label class="label-warning" ID="lblMessage" runat="server"><strong></strong></asp:Label></p>
-                        <asp:Button ID="btnReset" runat="server" class="btn ht-btn bg-4 m-t-10" Text="Login" OnClick="BtnResetPwd" />
+                        <asp:Button ID="btnReset" runat="server" class="btn ht-btn bg-4 m-t-10" Text="Reset" OnClick="BtnResetPwd" />
 
                 </div>
             </div>

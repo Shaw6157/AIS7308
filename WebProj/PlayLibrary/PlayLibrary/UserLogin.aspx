@@ -18,7 +18,7 @@
                         <p><asp:Label class="label-warning" ID="lblMsg" runat="server"><strong></strong></asp:Label></p>
                         <asp:Button ID="btnLogin" runat="server" class="btn ht-btn bg-4 m-t-10" Text="Login" OnClick="UserLogin" />
 
-                    <a href="UserPassword.aspx">Fogot Password?</a>
+                    <a href="/UserPassword.aspx" style="text-decoration:underline; padding: 1em; color:dodgerblue">Fogot Password?</a>
                 </div>
             </div>
         </div>

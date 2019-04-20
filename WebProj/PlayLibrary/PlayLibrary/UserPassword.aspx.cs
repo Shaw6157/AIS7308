@@ -11,7 +11,14 @@ namespace PlayLibrary
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            lblMessage.Text = "";
+        }
 
+        protected void BtnResetPwd(object sender, EventArgs e)
+        {
+            User_DAL aLayer = new User_DAL();
+            var NewPassword = aLayer.ResetPassword(txtUserID.Text, txtUserName.Text);
+            lblMessage.Text = "Your password has been reset to: " + NewPassword;
         }
     }
 }
