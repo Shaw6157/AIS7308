@@ -5,12 +5,14 @@ using System.Web;
 
 namespace PlayLibrary
 {
-    public class ToyItem
+    public class ToyModel
     {
         public string Toyid { get; set; }
         public string Toyname { get; set; }
         public string ImgSource { get; set; }
+        public decimal RRP { get; set; }
         public decimal Price { get; set; }
+        public decimal Amount { get; set; }
         public int Quantity { get; set; }
     }
 }

@@ -19,25 +19,28 @@ namespace PlayLibrary
         {
             try
             {
-                List<ToyItem> itemList = new List<ToyItem>();
-                if ((List<ToyItem>)Session["toyitems"] != null)
-                    itemList = (List<ToyItem>)Session["toyitems"];
+                List<ToyModel> itemList = new List<ToyModel>();
+                if ((List<ToyModel>)Session["ToyModels"] != null)
+                    itemList = (List<ToyModel>)Session["ToyModels"];
 
                 //get values from datasource
                 DataView dvSql = (DataView)DB_Toy_detail.Select(DataSourceSelectArguments.Empty);
-                ToyItem item = new ToyItem();
+                ToyModel item = new ToyModel();
                 item.Toyid = dvSql[0]["toyID"].ToString();
                 item.Toyname = dvSql[0]["toyname"].ToString();
                 item.ImgSource = dvSql[0]["ImgSource"].ToString();
-                item.Price = Convert.ToDecimal(dvSql[0]["Price"]);
+                item.Price = Convert.ToDecimal(dvSql[0]["Price"]) * Convert.ToDecimal(dvSql[0]["Pricedisc"]);
+                item.RRP = Convert.ToDecimal(dvSql[0]["Price"]);
 
                 TextBox box = (TextBox)FormView.FindControl("txtQuantity");    
                 item.Quantity = Convert.ToInt16(box.Text);
 
+                item.Amount = item.Price * item.Quantity;
+
                 itemList.Add(item);
 
                 //add to session
-                Session["toyitems"] = itemList;
+                Session["ToyModels"] = itemList;
 
                 lblMessage.Visible = true;
                 lblMessage.Text = "Toys added successfully!!";

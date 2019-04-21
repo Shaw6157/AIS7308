@@ -185,7 +185,7 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ToyItem.cs" />
+    <Compile Include="ToyModel.cs" />
     <Compile Include="ToyList.aspx.cs">
       <DependentUpon>ToyList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

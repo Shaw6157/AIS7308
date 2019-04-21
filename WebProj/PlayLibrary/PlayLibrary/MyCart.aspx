@@ -6,23 +6,55 @@
     <!-- Product cart -->
     <section class="m-t-0">
         <div class="container">
-        <div class="thumb p-30">
-            <div class="table-responsive">
-                <h3 class="title">Shopping cart</h3>
+            <div class="thumb p-30">
+                <div class="table-responsive">
+                    <h3 class="title">Shopping cart</h3>
 
-                <asp:GridView ID="GridView1" runat="server" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
-                    <AlternatingRowStyle BackColor="PaleGoldenrod"></AlternatingRowStyle>
-                    <FooterStyle BackColor="Tan"></FooterStyle>
-                    <HeaderStyle BackColor="Tan" Font-Bold="True"></HeaderStyle>
-                    <PagerStyle HorizontalAlign="Center" BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" Width="90%"></PagerStyle>
-                    <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite"></SelectedRowStyle>
-                    <SortedAscendingCellStyle BackColor="#FAFAE7"></SortedAscendingCellStyle>
-                    <SortedAscendingHeaderStyle BackColor="#DAC09E"></SortedAscendingHeaderStyle>
-                    <SortedDescendingCellStyle BackColor="#E1DB9C"></SortedDescendingCellStyle>
-                    <SortedDescendingHeaderStyle BackColor="#C2A47B"></SortedDescendingHeaderStyle>
-                </asp:GridView>
+                    <asp:GridView ID="GridViewCart" runat="server" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True"
+                        EmptyDataText="No Toys added..." GridLines="both" CssClass="gv table table-bordered" EmptyDataRowStyle-ForeColor="Red">
+                        <Columns>
+                            <asp:TemplateField HeaderText="Toy" HeaderStyle-CssClass="text-white bg-danger table-heading">
+                                <ItemTemplate>
+                                    <asp:Image ID="imgToy" ImageUrl='<%#Eval("ImgSource") %>' runat="server" Width="70" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Toy Name" HeaderStyle-CssClass="text-white bg-danger table-heading">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblToyName" runat="server" Text='<%#Eval("Toyname") %>' CssClass="table-content"></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Quantity" HeaderStyle-CssClass="text-white bg-danger table-heading">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblToyQuan" runat="server" Text='<%#Eval("Quantity") %>' CssClass="table-content"></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Value" HeaderStyle-CssClass="text-white bg-danger">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblToyPrice" runat="server" Text='<%# Eval("Amount") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Action" HeaderStyle-CssClass="text-white bg-danger">
+                                <ItemTemplate>
+                                    <asp:Button ID="btnEdit" runat="server" Text="Edit" OnClick="Edit_Click" CssClass="btn btn-warning btn-sm" CausesValidation="False" />
+                                    <asp:Button ID="btnDel" runat="server" Text="Remove" OnClick="Del_Click" CssClass="btn btn-warning btn-sm" CausesValidation="False" />
+                                    <asp:Label ID="lblToyID" runat="server" Text='<%#Eval("Toyid") %>' Visible="false"></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                    <%--<input type="hidden" runat="server" id="CToyID" />--%>
 
-<%--                <div class="table-div">
+                    <asp:Label ID="CToyID" Text="0" runat="server" Visible="false" />
+
+                    
+                    <div>
+                        <asp:Label ID="lblQuan" Text="Toy Quantity:" runat="server" Visible="false" />
+                        <asp:TextBox ID="txtQuan" runat="server" class="form-control" Width="100" Visible="false"></asp:TextBox>
+                        <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="Update_Click" Visible="false" class="btn btn-danger" />
+                    </div>
+
+
+                    <%--                <div class="table-div">
                     <div class="row m-0 table-heading">
                         <div class="col col-xs-1"><strong>Image</strong></div>
                         <div class="col col-xs-3"><strong>Product Name</strong></div>
@@ -84,39 +116,39 @@
                 </div>
             </div>--%>
 
-            <div class="row m-t-30">
-                <div class="col-sm-5 pull-right p-r-60">
-                    <div class="total table-div">
-                        <ul class="table-content">
-                            <li class="row m-0">
-                                <div class="col col-sm-6">
-                                    <strong>Items:</strong>
-                                </div>
-                                <div class="col col-sm-6">
-                                    <asp:Label ID="allquan" Text="0" runat="server" />
-                                </div>
-                            </li>
-                            <li class="row m-0">
-                                <div class="col col-sm-6">
-                                    <strong>Total:</strong>
-                                </div>
-                                <div class="col col-sm-6">
-                                    <asp:Label ID="allamount" Text="$ 0.0" runat="server" />
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="row m-t-30">
+                        <div class="col-sm-5 pull-right p-r-60">
+                            <div class="total table-div">
+                                <ul class="table-content">
+                                    <li class="row m-0">
+                                        <div class="col col-sm-6">
+                                            <strong>Items:</strong>
+                                        </div>
+                                        <div class="col col-sm-6">
+                                            <asp:Label ID="allquan" Text="0" runat="server" />
+                                        </div>
+                                    </li>
+                                    <li class="row m-0">
+                                        <div class="col col-sm-6">
+                                            <strong>Total:</strong>
+                                        </div>
+                                        <div class="col col-sm-6">
+                                            <asp:Label ID="allamount" Text="$ 0.0" runat="server" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons clearfix m-t-30">
+                        <div class="pull-left">
+                            <a href="ToyList.aspx" class="btn ht-btn bg-1">Continue Shopping</a>
+
+
+                        </div>
+                        <div class="pull-right p-r-60"><a href="#" class="btn ht-btn bg-3">Checkout</a></div>
                     </div>
                 </div>
-            </div>
-            <div class="buttons clearfix m-t-30">
-                <div class="pull-left">
-                    <a href="ToyList.aspx" class="btn ht-btn bg-1">Continue Shopping</a>
-
-
-                </div>
-                <div class="pull-right p-r-60"><a href="#" class="btn ht-btn bg-3">Checkout</a></div>
-            </div>
-        </div>
             </div>
     </section>
 
