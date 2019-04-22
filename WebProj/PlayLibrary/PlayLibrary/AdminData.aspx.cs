@@ -34,8 +34,8 @@ namespace PlayLibrary
                         using (DataTable dt = new DataTable())
                         {
                             sda.Fill(dt);
-                            GridView1.DataSource = dt;
-                            GridView1.DataBind();
+                            GridUser.DataSource = dt;
+                            GridUser.DataBind();
                         }
                     }
 
@@ -101,7 +101,7 @@ namespace PlayLibrary
 
         protected void OnRowEditing(object sender, GridViewEditEventArgs e)
         {
-            GridView1.EditIndex = e.NewEditIndex;
+            GridUser.EditIndex = e.NewEditIndex;
             this.BindGrid();
         }
 
@@ -109,8 +109,8 @@ namespace PlayLibrary
         {
             try
             {
-                GridViewRow row = GridView1.Rows[e.RowIndex];
-                int uid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+                GridViewRow row = GridUser.Rows[e.RowIndex];
+                int uid = Convert.ToInt32(GridUser.DataKeys[e.RowIndex].Values[0]);
 
                 string strpwd = (row.FindControl("txtPassword") as TextBox).Text;
                 string stremail = (row.FindControl("txtEmail") as TextBox).Text;
@@ -133,7 +133,7 @@ namespace PlayLibrary
                         con.Close();
                     }
                 }
-                GridView1.EditIndex = -1;
+                GridUser.EditIndex = -1;
                 this.BindGrid();
             }
             catch (Exception)
@@ -144,13 +144,13 @@ namespace PlayLibrary
 
         protected void OnRowCancelingEdit(object sender, EventArgs e)
         {
-            GridView1.EditIndex = -1;
+            GridUser.EditIndex = -1;
             this.BindGrid();
         }
 
         protected void OnRowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int uid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Values[0]);
+            int uid = Convert.ToInt32(GridUser.DataKeys[e.RowIndex].Values[0]);
             string query = "DELETE FROM tblUser WHERE userID=@uid";
             string constr = ConfigurationManager.ConnectionStrings["dbSOFT703ConnectionString"].ConnectionString;
 
@@ -179,7 +179,7 @@ namespace PlayLibrary
 
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
-            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridView1.EditIndex)
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridUser.EditIndex)
             {
                 (e.Row.Cells[5].Controls[2] as Button).Attributes["onclick"] = "return confirm('Do you want to delete this row?');";
             }
@@ -187,7 +187,7 @@ namespace PlayLibrary
 
         protected void OnPaging(object sender, GridViewPageEventArgs e)
         {
-            GridView1.PageIndex = e.NewPageIndex;
+            GridUser.PageIndex = e.NewPageIndex;
             this.BindGrid();
         }
 
@@ -347,5 +347,151 @@ namespace PlayLibrary
             lblMessage.Visible = true;
             lblMessage.Text = "Database error. ";
         }
+
+        protected void BtnTop10_Click(object sender, EventArgs e)
+        {
+
+            string constr = ConfigurationManager.ConnectionStrings["dbSOFT703ConnectionString"].ConnectionString;
+            string query = "SELECT TOP(10) * FROM tblUser ORDER BY logintime DESC";
+
+            try
+            {
+
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridUser.DataSource = dt;
+                            GridUser.DataBind();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                showMessage();
+            }
+        }
+
+        protected void SearchUser(object sender, EventArgs e)
+        {
+
+            string constr = ConfigurationManager.ConnectionStrings["dbSOFT703ConnectionString"].ConnectionString;
+            string query = "SELECT  * FROM tblUser";
+            if (searchTxt.Text != null)
+                query = "SELECT  * FROM tblUser WHERE firstname LIKE '%" + searchTxt.Text + "%'";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridUser.DataSource = dt;
+                            GridUser.DataBind();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                showMessage();
+            }
+        }
+
+        protected void SearchToyByDate(object sender, EventArgs e)
+        {
+
+            string constr = ConfigurationManager.ConnectionStrings["dbSOFT703ConnectionString"].ConnectionString;
+            string query = "SELECT  * FROM tblToy";
+            if (SearToyDate.Text != null)
+                query = "SELECT  * FROM tblToy WHERE moddate LIKE '%" + SearToyDate.Text + "%'";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridToy.DataSource = dt;
+                            GridToy.DataBind();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                showMessage();
+            }
+        }
+
+        protected void SearchToyByType(object sender, EventArgs e)
+        {
+
+            string constr = ConfigurationManager.ConnectionStrings["dbSOFT703ConnectionString"].ConnectionString;
+            string query = "SELECT  * FROM tblToy";
+            if (SearToyType.Text != null)
+                query = "SELECT  * FROM tblToy WHERE type LIKE '%" + SearToyType.Text + "%'";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridToy.DataSource = dt;
+                            GridToy.DataBind();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                showMessage();
+            }
+        }
+
+
+        protected void SearchToyByName(object sender, EventArgs e)
+        {
+
+            string constr = ConfigurationManager.ConnectionStrings["dbSOFT703ConnectionString"].ConnectionString;
+            string query = "SELECT  * FROM tblToy";
+            if (SearToyName.Text != null)
+                query = "SELECT  * FROM tblToy WHERE type LIKE '%" + SearToyName.Text + "%'";
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    using (SqlDataAdapter sda = new SqlDataAdapter(query, con))
+                    {
+                        using (DataTable dt = new DataTable())
+                        {
+                            sda.Fill(dt);
+                            GridToy.DataSource = dt;
+                            GridToy.DataBind();
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                showMessage();
+            }
+        }
+
     }
 }

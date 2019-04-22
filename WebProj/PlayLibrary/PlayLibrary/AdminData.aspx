@@ -21,11 +21,16 @@
     <h4>Tables: tblUser</h4>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
+
+    Search User: <asp:TextBox ID="searchTxt" runat="server" />
+    <asp:Button ID="BtnSearchUser" runat="server" Text="Search" OnClick="SearchUser" />
+    &nbsp; &nbsp; | Check Top 10: <asp:Button ID="BtnTop10" runat="server" Text="Go" OnClick="BtnTop10_Click" />
+
     <div id="dvGrid" style="padding: 10px; width: 800px">
         <contenttemplate>
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound"
+            <asp:GridView ID="GridUser" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound"
                 DataKeyNames="userID" OnRowEditing="OnRowEditing" OnRowCancelingEdit="OnRowCancelingEdit" PageSize="5" AllowPaging="true" OnPageIndexChanging="OnPaging"
-                OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No user has been added."
+                OnRowUpdating="OnRowUpdating" OnRowDeleting="OnRowDeleting" EmptyDataText="No user found."
                 CellSpacing ="4">
                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
@@ -105,20 +110,33 @@
     <hr color="#D9E7F8" id="product" />
 
     <h4>Tables: tblToy</h4>
+
+    
+    Search By Date: <asp:TextBox ID="SearToyDate" runat="server" Width="50" />
+    <asp:Button ID="BtnSearchToyDate" runat="server" Text="Search" OnClick="SearchToyByDate" />
+
+    
+    Search By Category: <asp:TextBox ID="SearToyType" runat="server" Width="50" />
+    <asp:Button ID="BtnSearchToyType" runat="server" Text="Search" OnClick="SearchToyByType" />
+    
+    Search By Name: <asp:TextBox ID="SearToyName" runat="server" Width="50" />
+    <asp:Button ID="BtnSearchToyName" runat="server" Text="Search" OnClick="SearchToyByName" />
+
     <asp:GridView ID="GridToy" runat="server" AutoGenerateColumns="False" DataKeyNames="toyID"
         OnRowEditing="OnToyEditing" OnRowCancelingEdit="OnToyCancelingEdit" PageSize="5" AllowPaging="true" OnPageIndexChanging="OnToyPaging"
-        OnRowUpdating="OnToyUpdating" OnRowDeleting="OnToyDeleting" EmptyDataText="No user has been added."
+        OnRowUpdating="OnToyUpdating" OnRowDeleting="OnToyDeleting" EmptyDataText="No toy found."
         CellSpacing="4" Width="1000">
         <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
         <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
         <Columns>
             <asp:BoundField DataField="toyID" HeaderText="toyID" InsertVisible="False" ReadOnly="True" SortExpression="toyID" />
-            <asp:BoundField DataField="toyname" HeaderText="toyname" SortExpression="toyname" ItemStyle-Width="650px" />
+            <asp:BoundField DataField="toyname" HeaderText="toyname" SortExpression="toyname" ItemStyle-Width="450px" />
             <asp:BoundField DataField="toydesc" HeaderText="toydesc" SortExpression="toydesc" ItemStyle-Width="650px" />
             <asp:BoundField DataField="imgSource" HeaderText="imgSource" SortExpression="imgSource" ItemStyle-Width="650px" />
-            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" ItemStyle-Width="650" />
-            <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" ItemStyle-Width="650" />
-            <asp:BoundField DataField="madein" HeaderText="madein" SortExpression="madein" ItemStyle-Width="650" />
+            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" ItemStyle-Width="450" />
+            <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" ItemStyle-Width="450" />
+            <asp:BoundField DataField="madein" HeaderText="madein" SortExpression="madein" ItemStyle-Width="450" />
+            <asp:BoundField DataField="moddate" HeaderText="ModDate" SortExpression="moddate" ItemStyle-Width="650" />
             <asp:CommandField ShowEditButton="True" ButtonType="Button" ControlStyle-CssClass="btn ht-btn bg-4 m-t-10" />
             <asp:CommandField ShowDeleteButton="True" ButtonType="Button" ControlStyle-CssClass="btn ht-btn bg-4 m-t-10" />
         </Columns>
