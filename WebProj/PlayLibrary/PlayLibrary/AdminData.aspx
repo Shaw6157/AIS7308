@@ -131,9 +131,10 @@
         <Columns>
             <asp:BoundField DataField="toyID" HeaderText="toyID" InsertVisible="False" ReadOnly="True" SortExpression="toyID" />
             <asp:BoundField DataField="toyname" HeaderText="toyname" SortExpression="toyname" ItemStyle-Width="450px" />
-            <asp:BoundField DataField="toydesc" HeaderText="toydesc" SortExpression="toydesc" ItemStyle-Width="650px" />
-            <asp:BoundField DataField="imgSource" HeaderText="imgSource" SortExpression="imgSource" ItemStyle-Width="650px" />
+            <asp:BoundField DataField="toydesc" HeaderText="toydesc" SortExpression="toydesc" ItemStyle-Width="850px" />
+            <asp:BoundField DataField="imgSource" HeaderText="imgSource" SortExpression="imgSource" ItemStyle-Width="850px" />
             <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" ItemStyle-Width="450" />
+            <asp:BoundField DataField="pricedisc" HeaderText="discount" SortExpression="pricedisc" ItemStyle-Width="450" />
             <asp:BoundField DataField="type" HeaderText="type" SortExpression="type" ItemStyle-Width="450" />
             <asp:BoundField DataField="madein" HeaderText="madein" SortExpression="madein" ItemStyle-Width="450" />
             <asp:BoundField DataField="moddate" HeaderText="ModDate" SortExpression="moddate" ItemStyle-Width="650" />

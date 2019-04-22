@@ -53,68 +53,29 @@
                         <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="Update_Click" Visible="false" class="btn btn-danger" />
                     </div>
 
+    <div class="thumb p-60">
+        <div id="content_checkout"   runat="server" >
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-md-offset-3">
+                    <h3 class="title">Checkout Details</h3>
+                        <div class="form-group">
+                            <asp:Label class="control-label f-normal" ID="lblName" runat="server" Text="Name" />
+                            <asp:TextBox class="form-control form-item" ID="txtName" runat="server"></asp:TextBox>
 
-                    <%--                <div class="table-div">
-                    <div class="row m-0 table-heading">
-                        <div class="col col-xs-1"><strong>Image</strong></div>
-                        <div class="col col-xs-3"><strong>Product Name</strong></div>
-                        <div class="col col-xs-2"><strong>Quantity</strong></div>
-                        <div class="col col-xs-2"><strong>Unit Price</strong></div>
-                        <div class="col col-xs-2"><strong>Total</strong></div>
-                    </div>
-                    <div class="row m-0 table-content">
-                        <div class="col col-xs-1">
-                            <a href="#">
-                                <img src="Images/sp3.jpg" width="70" alt="Train" title="train"></a>
                         </div>
-                        <div class="col col-xs-3">
-                            <a href="#">Train</a>
+                        <div class="form-group m-t-15">
+                            <asp:Label class="control-label f-normal" ID="lblNo" runat="server" Text="Contact Number" />
+                            <asp:TextBox class="form-control form-item" ID="txtNo" runat="server"></asp:TextBox>
                         </div>
-                        <div class="col col-xs-2">
-                            <div class="input-group btn-block">
-                                <input type="number" value="1" size="1" class="form-control form-item">
-                            </div>
+                        <div class="form-group m-t-15">
+                            <asp:Label class="control-label f-normal" ID="lblAddr" runat="server" Text="Delivery Address" />
+                            <asp:TextBox class="form-control form-item" ID="txtAddr" runat="server"></asp:TextBox>
                         </div>
-                        <div class="col col-xs-2">$35.00</div>
-                        <div class="col col-xs-2">$35.00</div>
-                    </div>
-                    <!--end row-->
-                    <div class="row m-0 table-content">
-                        <div class="col col-xs-1">
-                            <a href="#">
-                                <img src="Images/sp7.jpg" width="70" alt="Bricks" title="Bricks"></a>
-                        </div>
-                        <div class="col col-xs-3">
-                            <a href="#">Bricks</a>
-                        </div>
-                        <div class="col col-xs-2">
-                            <div class="input-group btn-block">
-                                <input type="number" value="1" size="1" class="form-control form-item">
-                            </div>
-                        </div>
-                        <div class="col col-xs-2">$19.99</div>
-                        <div class="col col-xs-2">$19.99</div>
-                    </div>
-                    <!--end row-->
-                    <div class="row m-0 table-content">
-                        <div class="col col-xs-1">
-                            <a href="#">
-                                <img src="Images/sp5.jpg" width="70" alt="Lego" title="Lego"></a>
-                        </div>
-                        <div class="col col-xs-3">
-                            <a href="#">Lego</a>
-                        </div>
-                        <div class="col col-xs-2">
-                            <div class="input-group btn-block">
-                                <input type="number" value="1" size="1" class="form-control form-item">
-                            </div>
-                        </div>
-                        <div class="col col-xs-2">$45.50</div>
-                        <div class="col col-xs-2">$45.50</div>
-                    </div>
-                    <!--end row-->
+                        <p><asp:Label class="label-warning" ID="lblMsg" runat="server" Visible="false"><strong></strong></asp:Label></p>
                 </div>
-            </div>--%>
+            </div>
+        </div>
+    </div>
 
                     <div class="row m-t-30">
                         <div class="col-sm-5 pull-right p-r-60">
@@ -146,7 +107,9 @@
 
 
                         </div>
-                        <div class="pull-right p-r-60"><a href="#" class="btn ht-btn bg-3">Checkout</a></div>
+                        <div class="pull-right p-r-60">
+                            <asp:Button ID="Button1" runat="server" Text="Checkout" OnClick="Checkout" />
+                        </div>
                     </div>
                 </div>
             </div>

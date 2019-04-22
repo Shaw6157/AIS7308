@@ -11,6 +11,7 @@ namespace PlayLibrary
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            content_checkout.Visible = false;
             if (!Page.IsPostBack)
             {
                 if (Session["ToyModels"] != null)
@@ -35,7 +36,6 @@ namespace PlayLibrary
             }
             allquan.Text = itemList.Count().ToString();
             allamount.Text = amount.ToString();
-
 
             lblQuan.Visible = false;
             txtQuan.Visible = false;
@@ -130,5 +130,10 @@ namespace PlayLibrary
             }
         }
 
+
+        protected void Checkout(object sender, EventArgs e)
+        {
+            content_checkout.Visible = true;
+        }
     }
 }
