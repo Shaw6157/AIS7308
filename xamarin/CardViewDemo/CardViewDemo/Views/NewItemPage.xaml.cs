@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using CardViewDemo.Models;
+using System.Net.Mail;
 
 namespace CardViewDemo.Views
 {
@@ -28,6 +29,7 @@ namespace CardViewDemo.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+
             MessagingCenter.Send(this, "AddItem", Item);
             await Navigation.PopModalAsync();
         }

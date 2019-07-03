@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderedviews="clr-namespace:Sharpnado.Presentation.Forms.RenderedViews;assembly=Sharpnado.Presentation.Forms"
+             x:Class="DemoSharpnado.Views.TestListPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Switch x:Name="flagLayout"/>
+            <renderedviews:HorizontalListView
+                BackgroundColor="Azure"
+                
+                ItemSpacing="8"
+                ItemHeight="70"
+                ItemWidth="144"
+                ItemsSource="{Binding Items}"
+                SnapStyle="Center"
+                ListLayout="Grid">
+                <renderedviews:HorizontalListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Text}"
+                                   VerticalOptions="Center"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </renderedviews:HorizontalListView.ItemTemplate>
+            </renderedviews:HorizontalListView>
+            <StackLayout Padding="40">
+                <BoxView StyleClass="HorizontalRule" />
+                <BoxView StyleClass="Circle" />
+                <BoxView StyleClass="Rounded" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
