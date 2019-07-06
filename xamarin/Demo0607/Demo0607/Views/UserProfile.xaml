@@ -3,11 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Demo0607.Views.UserProfile">
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
-            <Label Text="Profile !"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Log Out" TextColor="White" BackgroundColor="#ff77D065" Clicked="Click_Logout"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
+                <Label Text="Profile !"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label Text="ID:" FontSize="Medium" />
+                <Label Text="{Binding User.user_id}" FontSize="Small"/>
+                <Label Text="Email:" FontSize="Medium" />
+                <Label Text="{Binding User.email}" FontSize="Small"/>
+                <Button Text="Log Out" TextColor="White" BackgroundColor="#ff77D065" Clicked="Click_Logout"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

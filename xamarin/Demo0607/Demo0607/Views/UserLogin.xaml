@@ -4,9 +4,11 @@
              x:Class="Demo0607.Views.UserLogin">
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="50" VerticalOptions="Center">
-            <Entry Placeholder="Mail id"></Entry>
-            <Entry Placeholder="Password" IsPassword="True"></Entry>
-            <Button Text="Log In" TextColor="White" BackgroundColor="#ff77D065" Clicked="Click_Login"/>
+            <Entry x:Name="entry_uid" Placeholder="Mail id" Text="{Binding User.user_id}"></Entry>
+            <Entry x:Name="entry_pwd" Placeholder="Password" IsPassword="True"></Entry>
+            <Button Text="Log In" TextColor="White" BackgroundColor="#ff77D065"
+                    Command="{Binding CmdLogin}"
+                    />
             <Button Text="Register" TextColor="White" BackgroundColor="#ff77D065" Clicked="Click_Page_Register"/>
         </StackLayout>
     </ContentPage.Content>
