@@ -8,11 +8,13 @@
                 <Label Text="Profile !"
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" />
+                <Label Text="Here is the profile page." FontSize="Medium" />
                 <Label Text="ID:" FontSize="Medium" />
                 <Label Text="{Binding User.user_id}" FontSize="Small"/>
                 <Label Text="Email:" FontSize="Medium" />
                 <Label Text="{Binding User.email}" FontSize="Small"/>
                 <Button Text="Log Out" TextColor="White" BackgroundColor="#ff77D065" Clicked="Click_Logout"/>
+                <Button Text="About" TextColor="White" BackgroundColor="#ff77D065" Clicked="Click_About"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

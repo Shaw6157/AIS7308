@@ -20,19 +20,6 @@ namespace Demo0607.Views
             BindingContext = this.viewModel = viewModel;
         }
 
-        public ItemEditPage()
-        {
-            InitializeComponent();
-
-            var item = new Toy
-            {
-                Name = "Item 1",
-                Description = "This is an item description."
-            };
-
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
-        }
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "UpdateItem", viewModel.Item);

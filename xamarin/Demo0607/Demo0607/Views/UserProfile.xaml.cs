@@ -29,9 +29,14 @@ namespace Demo0607.Views
             //if (viewModel.Lists.Count == 0)
             //Navigation.PushAsync(new UserLogin());
         }
+
         async void Click_Logout(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new UserLogin());
+        }
+        async void Click_About(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
         }
     }
 }
