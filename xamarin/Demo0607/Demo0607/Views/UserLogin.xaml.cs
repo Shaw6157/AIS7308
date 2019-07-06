@@ -17,9 +17,13 @@ namespace Demo0607.Views
 			InitializeComponent ();
 		}
 
-        private void Button_Clicked(object sender, EventArgs e)
+        async void Click_Page_Register(object sender, EventArgs e)
         {
-            //Application.MainPage = null;
+            await Navigation.PushAsync(new UserRegister());
+        }
+        async void Click_Login(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

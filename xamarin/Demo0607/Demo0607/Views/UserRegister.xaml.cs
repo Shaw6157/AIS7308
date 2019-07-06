@@ -15,6 +15,14 @@ namespace Demo0607.Views
 		public UserRegister ()
 		{
 			InitializeComponent ();
-		}
-	}
+        }
+        async void Click_Cancel(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+        async void Click_Register(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+    }
 }

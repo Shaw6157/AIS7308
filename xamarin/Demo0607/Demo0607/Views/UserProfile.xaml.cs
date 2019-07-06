@@ -15,6 +15,23 @@ namespace Demo0607.Views
 		public UserProfile ()
 		{
 			InitializeComponent ();
-		}
-	}
+        }
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            //Application.MainPage = null;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //not login
+            //if (viewModel.Lists.Count == 0)
+            //Navigation.PushAsync(new UserLogin());
+        }
+        async void Click_Logout(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserLogin());
+        }
+    }
 }
