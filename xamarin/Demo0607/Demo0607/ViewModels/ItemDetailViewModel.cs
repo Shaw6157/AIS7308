@@ -15,7 +15,7 @@ namespace Demo0607.ViewModels
             Title = item?.Name;
             Item = item;
 
-            //application property
+            //depends on application property after login
             IsAdmin = true;
         }
     }
